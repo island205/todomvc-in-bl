@@ -1,0 +1,20 @@
+{
+  "name": "backbone",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "island205 <island205@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "todomvc-common": "~0.1.9",
+    "backbone.localStorage": "~1.1.13"
+  }
+}
