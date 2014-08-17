@@ -6,7 +6,7 @@ var $ = require('jquery');
 
 $(function () {
   'use strict';
-
+  
   // kick things off by creating the `App`
   new AppView();
   require('./routers/router');

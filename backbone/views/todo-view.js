@@ -1,7 +1,7 @@
 'use strict';
 
 var Backbone = require('../backbone');
-var global = require('../global');
+var router = require('../routers/router');
 var _ = require('underscore');
 var $ = require('jquery');
 
@@ -63,8 +63,8 @@ var TodoView = Backbone.View.extend({
 	isHidden: function () {
 		var isCompleted = this.model.get('completed');
 		return (// hidden cases only
-			(!isCompleted && global.TodoFilter === 'completed') ||
-			(isCompleted && global.TodoFilter === 'active')
+			(!isCompleted && router.TodoFilter === 'completed') ||
+			(isCompleted && router.TodoFilter === 'active')
 		);
 	},
 
