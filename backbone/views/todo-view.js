@@ -1,6 +1,9 @@
 'use strict';
 
 var Backbone = require('../backbone');
+var global = require('../global');
+var _ = require('underscore');
+var $ = require('jquery');
 
 // Todo Item View
 // --------------
@@ -60,8 +63,8 @@ var TodoView = Backbone.View.extend({
 	isHidden: function () {
 		var isCompleted = this.model.get('completed');
 		return (// hidden cases only
-			(!isCompleted && app.TodoFilter === 'completed') ||
-			(isCompleted && app.TodoFilter === 'active')
+			(!isCompleted && global.TodoFilter === 'completed') ||
+			(isCompleted && global.TodoFilter === 'active')
 		);
 	},
 
@@ -129,3 +132,5 @@ var TodoView = Backbone.View.extend({
 		this.model.destroy();
 	}
 });
+
+module.exports = TodoView

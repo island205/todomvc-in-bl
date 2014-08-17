@@ -35,4 +35,4 @@ var Todos = Backbone.Collection.extend({
 	comparator: 'order'
 });
 
-module.exports = Todos
+module.exports = new Todos()

@@ -4,9 +4,10 @@ var _ = require('underscore');
 var Todos = require('../collections/todos');
 var ENTER_KEY = 13;
 var ESC_KEY = 27;
+var global = require('../global');
+var TodoView = require('./todo-view');
 
-// Create our global collection of **Todos**.
-var todos = new Todos();
+var todos = require('../collections/todos');
 
 'use strict';
 
@@ -69,7 +70,7 @@ var AppView = Backbone.View.extend({
 
 			this.$('#filters li a')
 				.removeClass('selected')
-				.filter('[href="#/' + (app.TodoFilter || '') + '"]')
+				.filter('[href="#/' + (global.TodoFilter || '') + '"]')
 				.addClass('selected');
 		} else {
 			this.$main.hide();
@@ -82,7 +83,7 @@ var AppView = Backbone.View.extend({
 	// Add a single todo item to the list by creating a view for it, and
 	// appending its element to the `<ul>`.
 	addOne: function (todo) {
-		var view = new app.TodoView({ model: todo });
+		var view = new TodoView({ model: todo });
 		this.$list.append(view.render().el);
 	},
 

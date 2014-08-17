@@ -1,5 +1,9 @@
 'use strict';
 
+var todos = require('../collections/todos')
+var global = require('../global')
+var Backbone = require('../backbone')
+
 // Todo Router
 // ----------
 var TodoRouter = Backbone.Router.extend({
@@ -9,13 +13,12 @@ var TodoRouter = Backbone.Router.extend({
 
 	setFilter: function (param) {
 		// Set the current filter to be used
-		app.TodoFilter = param || '';
+		global.TodoFilter = param || '';
 
 		// Trigger a collection filter event, causing hiding/unhiding
 		// of Todo view items
-		app.todos.trigger('filter');
+		todos.trigger('filter');
 	}
 });
-
-app.TodoRouter = new TodoRouter();
+module.exports = new TodoRouter();
 Backbone.history.start();
