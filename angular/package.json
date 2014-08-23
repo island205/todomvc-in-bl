@@ -1,0 +1,14 @@
+{
+  "name": "Todos",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify-loader": "^0.2.0"
+  }
+}
